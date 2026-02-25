@@ -91,11 +91,14 @@
         ]
     },
     "cta": {
-        "heading": "Let’s Start Your Digital Transformation Today!",
+        "label": "JOIN US",
+        "heading": "Let's Start Your Digital Transformation Today!",
         "subheading": "Contact us to discover how we can help your business grow.",
         "button": {
-            "label": "Get Started",
+            "label": "GET STARTED",
             "href": "/contact"
-        }
+        },
+        "backgroundImage": "/images/hero_bg.jpg",
+        "entityText": "A connected entity of TechArk"
     }
 }
