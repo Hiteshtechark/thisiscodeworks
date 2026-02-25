@@ -1,0 +1,33 @@
+{
+  "logo": {
+    "text": "CODEWORKS",
+    "tagline": "Consulting",
+    "image": "/images/Final_logo.png"
+  },
+  "links": [
+    {
+      "label": "Home",
+      "href": "/"
+    },
+    {
+      "label": "About",
+      "href": "/about"
+    },
+    {
+      "label": "Services",
+      "href": "/services"
+    },
+    {
+      "label": "Careers",
+      "href": "/careers"
+    },
+    {
+      "label": "Gallery",
+      "href": "/gallery"
+    },
+    {
+      "label": "Contact",
+      "href": "/contact"
+    }
+  ]
+}

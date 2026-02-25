@@ -1,0 +1,166 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@400;600;700;800&family=Lato:wght@300;400;700;900&display=swap');
+
+/* =============================================
+   CSS VARIABLES & DESIGN TOKENS
+   ============================================= */
+:root {
+  --color-primary: #1aadb4;
+  --color-primary-dark: #148e94;
+  --color-primary-darker: #0e6b70;
+  --color-hero-teal: #0c515a;
+  --color-bg-hero: #0d3d42;
+  --color-bg-dark: #1b1b1b;
+  --color-bg-light: #f9f9f9;
+  --color-white: #ffffff;
+  --color-black: #000000;
+  --color-text: #444444;
+  --color-text-muted: #666666;
+  --color-border: #eeeeee;
+
+  --font-heading: 'Roboto Slab', serif;
+  --font-body: 'Lato', sans-serif;
+
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 16px;
+
+  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 20px rgba(0, 0, 0, 0.1);
+  --shadow-lg: 0 8px 40px rgba(0, 0, 0, 0.15);
+
+  --transition: 0.3s ease;
+  --max-width: 1240px;
+}
+
+/* =============================================
+   RESET & BASE
+   ============================================= */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+
+body {
+  font-family: var(--font-body);
+  color: var(--color-text);
+  background: var(--color-white);
+  line-height: 1.6;
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  transition: color var(--transition);
+}
+
+ul {
+  list-style: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-heading);
+  color: var(--color-black);
+  line-height: 1.2;
+}
+
+/* =============================================
+   UTILITY CLASSES
+   ============================================= */
+.container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* =============================================
+   REFERENCE STYLE OVERRIDES (THISISCODEWORKS)
+   ============================================= */
+.logo {
+  max-width: 260px;
+  display: inline-flex;
+}
+
+.logo-img {
+  max-width: 260px;
+  width: 100%;
+}
+
+nav ul li a {
+  padding-inline: 0.8em;
+}
+
+.section-label {
+  display: block;
+  font-family: var(--font-body);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--color-primary);
+  margin-bottom: 10px;
+}
+
+.section-heading {
+  font-size: 40px;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-body);
+  font-weight: 700;
+  font-size: 14px;
+  text-transform: uppercase;
+  padding: 15px 35px;
+  border-radius: var(--radius-sm);
+  border: none;
+  cursor: pointer;
+  transition: all var(--transition);
+  letter-spacing: 1px;
+}
+
+.btn-primary {
+  background: var(--color-primary);
+  color: var(--color-white);
+}
+
+.btn-primary:hover {
+  background: var(--color-bg-dark);
+  color: var(--color-white);
+}
+
+.btn-outline {
+  background: transparent;
+  color: var(--color-white);
+  border: 2px solid var(--color-white);
+}
+
+.btn-outline:hover {
+  background: var(--color-white);
+  color: var(--color-primary);
+}

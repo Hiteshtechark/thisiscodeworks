@@ -1,0 +1,101 @@
+{
+    "hero": {
+        "prefix": "EMPOWERING SOLUTIONS",
+        "heading": "Innovative Web And Mobile Development Services",
+        "description": "Transforming ideas into digital realities with our expert web and mobile application development services tailored to your business needs.",
+        "cta": {
+            "label": "GET STARTED",
+            "href": "/contact"
+        },
+        "stats": [
+            {
+                "value": "10+",
+                "label": "Years of Experience"
+            },
+            {
+                "value": "100+",
+                "label": "Team Members"
+            },
+            {
+                "value": "98%",
+                "label": "Satisfied Customer"
+            },
+            {
+                "value": "1,000+",
+                "label": "Project Completed"
+            }
+        ],
+        "image": "/images/hero_bg.jpg",
+        "secondaryImage": "/images/pexels-photo-1181271.jpeg"
+    },
+    "journey": {
+        "sectionLabel": "Our Journey",
+        "heading": "Codeworks Consulting: Bridging Technology and Innovation for Businesses",
+        "subheading": "Dedicated to delivering exceptional digital solutions that drive success for our clients.",
+        "paragraphs": [
+            "At Codeworks Consulting, we proudly partner with clients to achieve remarkable digital transformations, consistently delivering high-quality websites, web apps, and mobile apps that elevate their brands."
+        ],
+        "checklist": [
+            "Expert team of 100 skilled professionals.",
+            "Comprehensive SEO and maintenance services.",
+            "Client-focused approach and proven results."
+        ],
+        "image": {
+            "src": "https://thisiscodeworks.com/wp-content/uploads/2024/12/pexels-photo-16129700.jpeg",
+            "alt": "about-us"
+        }
+    },
+    "services": {
+        "sectionLabel": "Our Services",
+        "heading": "Comprehensive Digital Solutions Tailored for You",
+        "subheading": "From website development to SEO services, explore how we can help your business thrive online.",
+        "backgroundImage": "https://thisiscodeworks.com/wp-content/uploads/2024/12/pexels-photo-3861958.jpeg",
+        "items": [
+            {
+                "icon": "01",
+                "title": "Website Development",
+                "description": "Customized website solutions designed to perfectly represent your brand and meet your business goals."
+            },
+            {
+                "icon": "02",
+                "title": "Mobile App Development",
+                "description": "Innovative mobile applications that provide seamless user experiences across all devices."
+            },
+            {
+                "icon": "03",
+                "title": "Digital marketing",
+                "description": "Strategic digital marketing services to amplify your online presence and reach your target audience."
+            }
+        ]
+    },
+    "process": {
+        "sectionLabel": "Our Process",
+        "heading": "Engaging Steps to Deliver Exceptional Results",
+        "subheading": "",
+        "steps": [
+            {
+                "number": "01",
+                "title": "Consultation",
+                "description": "We listen and understand your business needs and goals."
+            },
+            {
+                "number": "02",
+                "title": "Development",
+                "description": "Our skilled team crafts tailor-made solutions just for you."
+            },
+            {
+                "number": "03",
+                "title": "Support",
+                "description": "Ongoing support and updates to ensure your success."
+            }
+        ]
+    },
+    "cta": {
+        "heading": "Let’s Start Your Digital Transformation Today!",
+        "subheading": "Contact us to discover how we can help your business grow.",
+        "button": {
+            "label": "Get Started",
+            "href": "/contact"
+        }
+    }
+}

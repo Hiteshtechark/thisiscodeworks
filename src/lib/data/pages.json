@@ -1,0 +1,27 @@
+{
+    "about": {
+        "title": "About Us",
+        "hero": "About Codeworks Consulting",
+        "description": "Learn about our story, our mission, and the team behind Codeworks Consulting."
+    },
+    "services": {
+        "title": "Our Services",
+        "hero": "What We Offer",
+        "description": "Explore our comprehensive range of IT and digital services."
+    },
+    "careers": {
+        "title": "Careers",
+        "hero": "Join Our Team",
+        "description": "We're always looking for talented individuals to join our growing team."
+    },
+    "gallery": {
+        "title": "Gallery",
+        "hero": "Our Work in Action",
+        "description": "Browse through our portfolio of completed projects and team moments."
+    },
+    "contact": {
+        "title": "Contact Us",
+        "hero": "Get In Touch",
+        "description": "Have a project in mind? Let's talk. We'd love to hear from you."
+    }
+}
