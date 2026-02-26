@@ -1,4 +1,5 @@
 <script>
+  import Counter from './Counter.svelte';
   export let data;
 
   const splitValueAndSuffix = (value) => {
@@ -17,40 +18,43 @@
 </script>
 
 <section class="hero-section" aria-label="Homepage hero">
+  <div class="hero-bg-overlay"></div>
   <div class="section-background" aria-hidden="true"></div>
 
-  <div class="hero-grid">
-    <div class="hero-block content-block">
-      <div class="block-inner">
-      <span class="prefix">{data.prefix}</span>
-      <h1>{data.heading}</h1>
+  <div class="container hero-container">
+    <div class="hero-content animate-fade-in">
+      {#if data.prefix}
+        <span class="prefix">{data.prefix}</span>
+      {/if}
+      <h1 class="heading-gradient">{data.heading}</h1>
       <p class="description">{data.description}</p>
+      
       <div class="actions">
-        <a href={data.cta.href} class="btn btn-primary hero-cta">
-          {data.cta.label}
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="16" height="16" fill="currentColor"><path d="M504.3 273.6l-112.1 104c-6.992 6.484-17.18 8.218-25.94 4.406c-8.758-3.812-14.42-12.45-14.42-21.1L351.9 288H32C14.33 288 .0002 273.7 .0002 255.1S14.33 224 32 224h319.9l0-72c0-9.547 5.66-18.19 14.42-22c8.754-3.809 18.95-2.075 25.94 4.41l112.1 104C514.6 247.9 514.6 264.1 504.3 273.6z"></path></svg>
+        <a href={data.cta.href} class="btn-premium">
+          <span>{data.cta.label}</span>
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="18" height="18" fill="currentColor">
+            <path d="M504.3 273.6l-112.1 104c-6.992 6.484-17.18 8.218-25.94 4.406c-8.758-3.812-14.42-12.45-14.42-21.1L351.9 288H32C14.33 288 .0002 273.7 .0002 255.1S14.33 224 32 224h319.9l0-72c0-9.547 5.66-18.19 14.42-22c8.754-3.809 18.95-2.075 25.94 4.41l112.1 104C514.6 247.9 514.6 264.1 504.3 273.6z"></path>
+          </svg>
         </a>
       </div>
-    </div>
-    </div>
 
-    <div class="hero-block hero-bg" style="background-image: url({data.image})" aria-hidden="true"></div>
-
-    <div class="hero-block thumb-block">
-      <img src={data.secondaryImage} alt="Discover" />
-    </div>
-
-    <div class="hero-block stats-block">
-      <div class="stats-grid">
+      <div class="stats-premium">
         {#each data.stats as stat}
           {@const parts = splitValueAndSuffix(stat.value)}
-          <div class="stat-item">
-            <div class="stat-number">
-              <span class="value">{parts.number}</span><span class="suffix">{parts.suffix}</span>
+          <div class="stat-card glass">
+            <div class="stat-number glow-text">
+              <Counter value={parts.number} suffix={parts.suffix} />
             </div>
             <p class="stat-label">{stat.label}</p>
           </div>
         {/each}
+      </div>
+    </div>
+
+    <div class="hero-visual animate-fade-in" style="animation-delay: 0.2s">
+      <div class="image-wrapper glass">
+        <img src={data.secondaryImage} alt="Strategic Design" class="hero-image" />
+        <div class="image-glow"></div>
       </div>
     </div>
   </div>
@@ -59,218 +63,212 @@
 <style>
   .hero-section {
     position: relative;
-    width: 100%;
+    padding: 120px 0 80px;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
     overflow: hidden;
+  }
+
+  .hero-bg-overlay {
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at 20% 30%, rgba(26, 173, 180, 0.15) 0%, transparent 50%),
+                radial-gradient(circle at 80% 70%, rgba(12, 81, 90, 0.2) 0%, transparent 50%);
+    z-index: 1;
   }
 
   .section-background {
     position: absolute;
     inset: 0;
-    background: linear-gradient(rgba(7, 38, 42, 0.9), rgba(7, 38, 42, 0.9)), url('/images/hero_bg.jpg');
+    background-image: linear-gradient(rgba(10, 10, 11, 0.8), rgba(10, 10, 11, 0.8)), 
+                      url('https://thisiscodeworks.com/wp-content/uploads/2024/12/pexels-photo-270637.jpeg');
     background-size: cover;
     background-position: center;
     z-index: 0;
+    transform: scale(1.05); /* Soft zoom for texture */
   }
 
-  .hero-grid {
-    display: grid !important;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: auto auto;
-    max-width: var(--max-width);
-    width: 100%;
-    margin: 0 auto;
-    padding: 0 20px 90px;
-    align-items: stretch;
+  .hero-container {
     position: relative;
-    z-index: 1;
-    min-height: 760px;
-    gap: 0;
-  }
-
-  .hero-block {
-    position: relative;
-    display: flex;
+    z-index: 2;
+    display: grid;
+    grid-template-columns: 1.2fr 0.8fr;
+    gap: 60px;
     align-items: center;
-    justify-content: center;
   }
 
-  .content-block {
-    background: linear-gradient(180deg,var(--color-bg-hero),var(--color-hero-teal));
-    color: var(--color-white) !important;
-    padding: 100px 56px;
-    display: flex;
-    align-items: flex-start;
-    justify-content: flex-start;
-    min-height: 510px;
-  }
-
-  .block-inner {
-    max-width: 580px;
-    width: 100%;
+  .hero-content {
+    max-width: 720px;
   }
 
   .prefix {
-    display: block;
-    font-family: var(--font-body);
-    font-size: 16px;
-    font-weight: 400;
+    display: inline-block;
+    font-size: 14px;
+    font-weight: 700;
     text-transform: uppercase;
-    letter-spacing: 2px;
-    margin-bottom: 20px;
-    opacity: 0.9;
+    letter-spacing: 4px;
+    color: var(--color-primary);
+    margin-bottom: 24px;
+    position: relative;
+    padding-left: 50px;
+  }
+
+  .prefix::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 50%;
+    width: 40px;
+    height: 1px;
+    background: var(--color-primary);
   }
 
   h1 {
-    font-family: var(--font-heading);
-    font-size: clamp(34px, 5vw, 56px);
-    font-weight: 700;
-    line-height: 1.12;
-    margin-bottom: 20px;
-    color: var(--color-white) !important;
-    letter-spacing: -0.5px;
+    font-size: clamp(40px, 6vw, 72px);
+    font-weight: 800;
+    line-height: 1.1;
+    margin-bottom: 24px;
+    letter-spacing: -0.02em;
   }
 
   .description {
-    font-family: var(--font-body);
-    font-size: 16px;
-    line-height: 1.6;
-    margin-bottom: 35px;
-    opacity: 0.95;
-    max-width: 500px;
+    font-size: 18px;
+    line-height: 1.7;
+    color: var(--color-text-muted);
+    margin-bottom: 48px;
+    max-width: 580px;
   }
 
-  .actions .btn {
-    gap: 12px;
-    padding: 16px 34px;
-    background: var(--color-primary);
-    border-radius: 6px;
-    font-size: 16px;
+  .btn-premium {
     display: inline-flex;
     align-items: center;
-    text-decoration: none;
-    color: white !important;
+    gap: 16px;
+    background: var(--color-primary);
+    color: var(--color-white);
+    padding: 20px 40px;
+    border-radius: var(--radius-md);
+    font-weight: 700;
+    font-size: 16px;
     text-transform: uppercase;
-    font-weight: 800;
-    letter-spacing: 1px;
+    letter-spacing: 2px;
+    transition: var(--transition);
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 10px 30px var(--color-primary-glow);
   }
 
-  .hero-cta svg { margin-left: 8px; }
-
-  .suffix {
-    margin-left: 6px;
+  .btn-premium:hover {
+    transform: translateY(-5px);
+    background: var(--color-white);
+    color: var(--color-primary);
+    box-shadow: 0 15px 40px rgba(255, 255, 255, 0.2);
   }
 
-  .hero-bg {
-    grid-column: 2 / 3;
-    grid-row: 1 / 2;
-    min-height: 510px;
-    background-size: cover;
-    background-position: center right;
-    z-index: 2;
-  }
-
-  .thumb-block {
-    grid-column: 1 / 2;
-    grid-row: 2 / 3;
-    padding-top: 28px;
-    justify-content: flex-start;
-    z-index: 2;
-  }
-
-  .thumb-block img {
-    width: 86%;
-    max-width: 560px;
-    border-radius: 2px;
-    box-shadow: var(--shadow-sm);
-  }
-
-  .stats-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 28px 36px;
-    width: 100%;
-    max-width: 620px;
-  }
-
-  .stat-item {
+  .stats-premium {
+    margin-top: 80px;
     display: flex;
-    flex-direction: column;
+    gap: 32px;
+  }
+
+  .stat-card {
+    padding: 24px 32px;
+    border-radius: var(--radius-md);
+    flex: 1;
+    min-width: 160px;
   }
 
   .stat-number {
-    font-family: var(--font-heading);
-    font-size: 42px;
-    font-weight: 700;
-    line-height: 1;
-    margin-bottom: 10px;
-  }
-
-  .stats-block {
-    grid-column: 2 / 3;
-    grid-row: 2 / 3;
-    justify-content: flex-start;
-    align-items: flex-start;
-    width: 100%;
-    background: linear-gradient(180deg, var(--color-bg-hero), var(--color-hero-teal));
-    padding: 40px 42px;
-    border-radius: 0;
-    box-shadow: none;
-    color: var(--color-white) !important;
-    z-index: 3;
+    font-size: 40px;
+    font-weight: 800;
+    color: var(--color-white);
+    margin-bottom: 4px;
   }
 
   .stat-label {
-    font-family: var(--font-body);
-    font-size: 16px;
-    font-weight: 400;
-    opacity: 0.8;
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--color-text-muted);
+    text-transform: uppercase;
+    letter-spacing: 1px;
   }
 
-  @media (max-width: 991px) {
-    .hero-grid {
+  .hero-visual {
+    position: relative;
+    display: flex;
+    justify-content: center;
+  }
+
+  .image-wrapper {
+    position: relative;
+    padding: 12px;
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    transform: perspective(1000px) rotateY(-5deg);
+    transition: var(--transition);
+  }
+
+  .image-wrapper:hover {
+    transform: perspective(1000px) rotateY(0deg);
+  }
+
+  .hero-image {
+    width: 100%;
+    aspect-ratio: 4/5;
+    object-fit: cover;
+    border-radius: calc(var(--radius-lg) - 8px);
+    display: block;
+  }
+
+  .image-glow {
+    position: absolute;
+    inset: -20%;
+    background: radial-gradient(circle at center, var(--color-primary-glow) 0%, transparent 70%);
+    pointer-events: none;
+    opacity: 0.5;
+  }
+
+  @media (max-width: 1024px) {
+    .hero-container {
       grid-template-columns: 1fr;
-      padding: 0 16px 48px;
-      min-height: unset;
+      text-align: center;
+      gap: 80px;
     }
 
-    .content-block {
-      min-height: unset;
-      padding: 56px 24px;
+    .hero-content {
+      margin: 0 auto;
     }
 
-    .hero-bg {
-      grid-column: 1 / 2;
-      grid-row: 2 / 3;
-      min-height: 260px;
+    .description {
+      margin-left: auto;
+      margin-right: auto;
     }
 
-    .thumb-block {
-      grid-column: 1 / 2;
-      grid-row: 3 / 4;
-      padding-top: 16px;
+    .prefix {
+      padding-left: 0;
     }
 
-    .thumb-block img {
-      width: 100%;
-      max-width: none;
+    .prefix::before {
+      display: none;
     }
 
-    .stats-block {
-      grid-column: 1 / 2;
-      grid-row: 4 / 5;
-      padding: 28px 24px;
+    .stats-premium {
+      justify-content: center;
+      flex-wrap: wrap;
     }
-
-    .stats-grid {
-      max-width: none;
-    }
-
-    h1 { font-size: 32px; }
   }
 
   @media (max-width: 640px) {
-    .stats-grid {
-      grid-template-columns: 1fr;
+    .stats-premium {
+      gap: 16px;
+    }
+    
+    .stat-card {
+      padding: 16px;
+    }
+
+    h1 {
+      font-size: 36px;
     }
   }
 </style>

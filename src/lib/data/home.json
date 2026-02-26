@@ -25,8 +25,9 @@
                 "label": "Project Completed"
             }
         ],
-        "image": "/images/hero_bg.jpg",
-        "secondaryImage": "/images/pexels-photo-1181271.jpeg"
+        "image": "/assets/pexels-photo-1181271.jpeg",
+        "secondaryImage": "/assets/pexels-photo-1181271.jpeg",
+        "sectionBackground": "https://thisiscodeworks.com/wp-content/uploads/2024/12/pexels-photo-270637.jpeg"
     },
     "journey": {
         "sectionLabel": "Our Journey",
@@ -41,7 +42,7 @@
             "Client-focused approach and proven results."
         ],
         "image": {
-            "src": "https://thisiscodeworks.com/wp-content/uploads/2024/12/pexels-photo-16129700.jpeg",
+            "src": "/assets/pexels-photo-16129700.jpeg",
             "alt": "about-us"
         }
     },
@@ -49,7 +50,7 @@
         "sectionLabel": "Our Services",
         "heading": "Comprehensive Digital Solutions Tailored for You",
         "subheading": "From website development to SEO services, explore how we can help your business thrive online.",
-        "backgroundImage": "https://thisiscodeworks.com/wp-content/uploads/2024/12/pexels-photo-3861958.jpeg",
+        "backgroundImage": "/assets/pexels-photo-1181271.jpeg",
         "items": [
             {
                 "icon": "01",
@@ -98,7 +99,7 @@
             "label": "GET STARTED",
             "href": "/contact"
         },
-        "backgroundImage": "/images/hero_bg.jpg",
+        "backgroundImage": "/assets/pexels-photo-1181271.jpeg",
         "entityText": "A connected entity of TechArk"
     }
 }
