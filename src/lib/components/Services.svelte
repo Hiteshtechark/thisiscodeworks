@@ -145,6 +145,7 @@
     font-weight: 800;
     margin-bottom: 24px;
     line-height: 1.2;
+    color: var(--color-white);
   }
 
   .cta-inner p {

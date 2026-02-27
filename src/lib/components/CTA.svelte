@@ -27,13 +27,6 @@
     </div>
   </div>
 
-  {#if data.entityText}
-    <div class="legal-bar animate-fade-in">
-      <div class="container">
-        <p>{data.entityText}</p>
-      </div>
-    </div>
-  {/if}
 </section>
 
 <style>
@@ -121,19 +114,6 @@
     color: var(--color-primary);
   }
 
-  .legal-bar {
-    margin-top: 60px;
-    text-align: center;
-    position: relative;
-    z-index: 2;
-  }
-
-  .legal-bar p {
-    font-size: 14px;
-    color: var(--color-primary);
-    opacity: 0.8;
-    letter-spacing: 1px;
-  }
 
   @media (max-width: 1024px) {
     .cta-card {

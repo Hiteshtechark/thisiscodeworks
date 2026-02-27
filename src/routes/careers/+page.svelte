@@ -49,7 +49,7 @@
       </ul>
     </div>
 
-    <div class="jobs-panel">
+    <div class="jobs-panel glass">
       <h3>Open Roles</h3>
       {#each roles as role}
         <article class="job-item">
@@ -98,7 +98,8 @@
   }
 
   .career-content {
-    padding: 90px 0;
+    padding: 100px 0;
+    background: var(--color-bg-dark);
   }
 
   .career-grid {
@@ -129,10 +130,14 @@
   }
 
   .jobs-panel {
-    background: var(--color-bg-light);
-    border: 1px solid var(--color-border);
-    border-radius: 8px;
-    padding: 28px;
+    padding: 40px;
+    border-radius: var(--radius-md);
+    transition: var(--transition);
+  }
+
+  .jobs-panel:hover {
+    border-color: var(--color-primary);
+    background: rgba(255, 255, 255, 0.05);
   }
 
   .jobs-panel h3 {

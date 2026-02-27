@@ -4,7 +4,6 @@
   import Journey from '$lib/components/Journey.svelte';
   import Services from '$lib/components/Services.svelte';
   import Process from '$lib/components/Process.svelte';
-  import CTA from '$lib/components/CTA.svelte';
 </script>
 
 <svelte:head>
@@ -16,4 +15,3 @@
 <Journey data={homeData.journey} />
 <Services data={homeData.services} />
 <Process data={homeData.process} />
-<CTA data={homeData.cta} />

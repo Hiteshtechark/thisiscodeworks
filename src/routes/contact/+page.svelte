@@ -22,7 +22,7 @@
 
 <section class="contact-section">
   <div class="container contact-grid">
-    <div class="contact-card">
+    <div class="contact-card glass">
       <h2>Contact Information</h2>
       <p>Share your requirements and our team will respond shortly.</p>
 
@@ -42,7 +42,7 @@
       </div>
     </div>
 
-    <form class="contact-form" on:submit|preventDefault>
+    <form class="contact-form glass" on:submit|preventDefault>
       <h2>Send A Message</h2>
       <label>
         Full Name
@@ -101,7 +101,9 @@
   }
 
   .contact-section {
-    padding: 90px 0;
+    padding: 100px 0;
+    background: var(--color-bg-dark);
+    position: relative;
   }
 
   .contact-grid {
@@ -112,10 +114,15 @@
 
   .contact-card,
   .contact-form {
-    background: var(--color-bg-light);
-    border: 1px solid var(--color-border);
-    border-radius: 10px;
-    padding: 30px;
+    padding: 40px;
+    border-radius: var(--radius-md);
+    transition: var(--transition);
+  }
+
+  .contact-card:hover,
+  .contact-form:hover {
+    border-color: var(--color-primary);
+    background: rgba(255, 255, 255, 0.05);
   }
 
   h2 {
@@ -153,18 +160,30 @@
 
   label {
     display: grid;
-    gap: 8px;
+    gap: 12px;
     font-weight: 700;
     font-size: 14px;
-    color: var(--color-black);
+    color: var(--color-white);
+    margin-bottom: 8px;
   }
 
   input,
   textarea {
-    border: 1px solid #d2d8dc;
-    border-radius: 6px;
-    padding: 11px 12px;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: var(--radius-sm);
+    padding: 14px 16px;
     font: inherit;
+    color: var(--color-white);
+    transition: var(--transition);
+  }
+
+  input:focus,
+  textarea:focus {
+    outline: none;
+    border-color: var(--color-primary);
+    background: rgba(255, 255, 255, 0.05);
+    box-shadow: 0 0 15px var(--color-primary-glow);
   }
 
   textarea {

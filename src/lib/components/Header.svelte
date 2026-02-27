@@ -62,10 +62,10 @@
     display: flex;
     align-items: center;
     border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-    position: sticky;
+    position: fixed;
     top: 0;
     left: 0;
-    right: 0;
+    width: 100%;
     z-index: 1000;
     transition: var(--transition);
   }

@@ -59,7 +59,7 @@
 
     <div class="grid">
       {#each services as service, index}
-        <article class="card">
+        <article class="card glass">
           <span class="index">{String(index + 1).padStart(2, '0')}</span>
           <h3>{service.title}</h3>
           <p>{service.text}</p>
@@ -115,35 +115,44 @@
   }
 
   .services-list {
-    padding: 90px 0;
+    padding: 100px 0;
+    background: var(--color-bg-dark);
+    position: relative;
   }
 
   .section-intro {
     text-align: center;
     max-width: 820px;
-    margin: 0 auto 52px;
+    margin: 0 auto 60px;
   }
 
   .section-intro h2 {
-    font-size: 38px;
-    margin-bottom: 14px;
+    font-size: clamp(32px, 4vw, 42px);
+    margin-bottom: 20px;
+    font-weight: 800;
   }
 
   .section-intro p {
     color: var(--color-text-muted);
+    font-size: 18px;
   }
 
   .grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 22px;
+    gap: 30px;
   }
 
   .card {
-    background: var(--color-bg-light);
-    border: 1px solid var(--color-border);
-    border-radius: 8px;
     padding: 30px;
+    border-radius: var(--radius-md);
+    transition: var(--transition);
+  }
+
+  .card:hover {
+    transform: translateY(-5px);
+    background: rgba(255, 255, 255, 0.05);
+    border-color: var(--color-primary);
   }
 
   .index {
@@ -162,19 +171,26 @@
   .card p {
     color: var(--color-text-muted);
     line-height: 1.8;
+    font-size: 15px;
   }
 
   .service-cta {
-    background: var(--color-bg-light);
-    padding: 70px 0;
-    border-top: 1px solid var(--color-border);
+    padding: 80px 0;
+    background: var(--color-bg-dark);
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    position: relative;
   }
 
   .cta-inner {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    gap: 20px;
+    gap: 40px;
+    padding: 60px;
+    background: rgba(255, 255, 255, 0.02);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: var(--radius-lg);
   }
 
   .cta-inner h2 {

@@ -51,7 +51,7 @@
 <section class="stats">
   <div class="container stats-grid">
     {#each highlights as stat}
-      <div class="stat-card">
+      <div class="stat-card glass">
         <p class="stat-value">{stat.value}</p>
         <p class="stat-label-text">{stat.label}</p>
       </div>
@@ -95,7 +95,8 @@
   }
 
   .about-overview {
-    padding: 90px 0;
+    padding: 100px 0;
+    background: var(--color-bg-dark);
   }
 
   .about-grid {
@@ -124,8 +125,8 @@
   }
 
   .stats {
-    background: var(--color-bg-light);
     padding: 70px 0 90px;
+    background: var(--color-bg-dark);
   }
 
   .stats-grid {
@@ -135,20 +136,26 @@
   }
 
   .stat-card {
-    background: var(--color-white);
-    border: 1px solid var(--color-border);
-    border-radius: 8px;
-    text-align: center;
     padding: 32px 20px;
+    border-radius: var(--radius-md);
+    text-align: center;
+    transition: var(--transition);
+  }
+
+  .stat-card:hover {
+    transform: translateY(-5px);
+    background: rgba(255, 255, 255, 0.05);
+    border-color: var(--color-primary);
   }
 
   .stat-value {
-    color: var(--color-primary-dark);
+    color: var(--color-primary);
     font-family: var(--font-heading);
     font-size: 42px;
     font-weight: 700;
     line-height: 1;
     margin-bottom: 8px;
+    text-shadow: 0 0 20px var(--color-primary-glow);
   }
 
   .stat-label-text {
